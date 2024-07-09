@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <link href="https://cdn.bootcss.com/jquery-datetimepicker/2.5.17/jquery.datetimepicker.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="login-form">
+    <form id="loginForm">
+      <h1>登入頁面</h1>
+      <input type="text" id="username" name="username" placeholder="用戶名">
+      <input type="password" id="password" name="password" placeholder="密碼">
+      <button type="submit"  class="sub_btn">登入</button>
+    </form>
+  </div>
+
+  <div id="leave-form" style="display: none">
+    <form id="leaveRequestForm">
+      <label for="start_date" style="color: white;">開始日期和時間 :</label>
+      <input type="text" id="start_date" name="start_date">
+
+      <label for="end_date"  style="color: white;">結束日期和時間：</label>
+      <input type="text" id="end_date" name="end_date" disabled>
+ 
+      <label for="reason" style="color: white;">休假原因：</label>
+      <small class="reasonTip">文字請多於10字</small>
+      <textarea id="reason" name="reason"  rows="3" cols="52"></textarea>
+
+      <button type="submit" class="sub_btn">提交申請</button>
+    </form>
+
+    <table id="requestsTable">
+      <thead>
+        <tr>
+          <th>申請人員</th>
+          <th>開始日期</th>
+          <th>結束日期</th>
+          <th>原因</th>
+          <th>狀態</th>
+          <th id="operate">操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-datetimepicker/2.5.17/jquery.datetimepicker.full.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
